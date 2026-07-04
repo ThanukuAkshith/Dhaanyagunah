@@ -1,0 +1,734 @@
+:root {
+    --primary-green: #059A32;   /* Deep Crop Green */
+    --light-green: #68B73E;     /* Leaf Green */
+    --earth-brown: #8B5E3C;     /* Soil Brown */
+    --dark-brown: #4A3228;      /* Dark Wood */
+    --harvest-yellow: #FBC239;  /* Sun/Gold */
+    --cream: #FDFBF7;           /* Background */
+    --white: #ffffff;
+    --text-grey: #555;
+}
+
+/* --- RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+/* --- UTILITIES --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--earth-brown);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--earth-brown);
+    color: var(--earth-brown);
+}
+
+.btn-outline:hover {
+    background-color: var(--earth-brown);
+    color: var(--white);
+}
+
+/* --- HEADER & NAV --- */
+header {
+    background: rgba(253, 251, 247, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--dark-brown);
+}
+
+.nav-links a:hover {
+    color: var(--earth-brown);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #FDFBF7 50%, #EFEBE4 50%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.hero span {
+    color: var(--earth-brown);
+}
+
+/* --- SECTIONS --- */
+section {
+    padding: 80px 0;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-grey);
+}
+
+/* Decorative underline for headers */
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--harvest-yellow);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- WHY DHAANYAGUAH & MISSION SECTION --- */
+.about-mission {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.about-mission .grid-2 {
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.about-mission h2 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Decorative underline for the main heading */
+.about-mission h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--harvest-yellow);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.about-mission h3 {
+    font-size: 2rem;
+    color: var(--earth-brown);
+    margin-bottom: 1.5rem;
+}
+
+.about-mission p {
+    font-size: 1.1rem;
+    color: var(--dark-brown);
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* --- CARDS (Team & Services) --- */
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-bottom: 4px solid var(--harvest-yellow);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.team-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--earth-brown);
+    margin-bottom: 20px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--dark-brown);
+    color: rgba(255,255,255,0.8);
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.footer-links li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.footer-links a:hover {
+    color: var(--harvest-yellow);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--harvest-yellow);
+    color: var(--dark-brown);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   TEAM SECTION STYLES
+   ========================================= */
+
+.mentors-section {
+    padding: 80px 0;
+    background-color: var(--white); /* Clean white background */
+    position: relative;
+}
+
+/* The ::before block that created the circle has been removed */
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.mentor-card {
+    background: var(--cream);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.mentor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-bottom: 4px solid var(--harvest-yellow);
+}
+
+.mentor-img-wrapper {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mentor-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* Focus on face */
+    transition: transform 0.5s ease;
+    filter: grayscale(20%); /* Slight grayscale for professional look */
+}
+
+.mentor-card:hover .mentor-img-wrapper img {
+    transform: scale(1.05);
+    filter: grayscale(0%); /* Full color on hover */
+}
+
+.mentor-info {
+    padding: 30px 20px;
+}
+
+.mentor-info h3 {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.designation {
+    display: block;
+    color: var(--earth-brown);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.mentor-info .description {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mentors-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Team */
+.team-section {
+    background-color: var(--white);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background: var(--cream);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.role {
+    display: block;
+    color: var(--harvest-yellow);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.team-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--primary-green);
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.team-social-links a {
+    margin: 0 8px;
+    color: var(--light-green);
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.team-social-links a:hover {
+    color: var(--earth-brown);
+}
+
+/* =========================================
+   ACHIEVEMENTS SECTION STYLES
+   ========================================= */
+.achievements-section {
+    background-color: var(--cream);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    border-left: 5px solid transparent;
+    cursor: pointer;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    border-left: 5px solid var(--harvest-yellow);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.achieve-img {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.achieve-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .achieve-img img {
+    transform: scale(1.05);
+}
+
+.achieve-content {
+    padding: 25px;
+    position: relative;
+}
+
+.achieve-icon {
+    position: absolute;
+    top: -25px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--harvest-yellow);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.achievement-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.achievement-card p {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    margin-bottom: 0;
+}
+
+/* =========================================
+   PROMO DRAWER (SLIDE-IN AD) STYLES
+   ========================================= */
+
+.drawer-logo {
+    width: 50px;      /* Adjust width to match the icon size */
+    height: 50px;     /* Adjust height */
+    object-fit: contain; /* Ensures the logo doesn't get squashed */
+    display: block;
+}
+
+
+
+.promo-drawer {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%); /* Start fully hidden to the left */
+    width: 300px;
+    background-color: var(--primary-green); /* Using your brand green */
+    color: var(--white);
+    padding: 30px;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+    z-index: 10000;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    text-align: center;
+}
+
+/* The class added by JS to show the drawer */
+.promo-drawer.active {
+    transform: translate(0, -50%);
+}
+
+/* Close Button */
+.drawer-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.drawer-close:hover {
+    color: var(--harvest-yellow);
+}
+
+/* Content Styling */
+.logo-area {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--harvest-yellow);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.promo-drawer h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Blinking Animation Keyframes */
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Apply Blinking to the text */
+.blink-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--harvest-yellow);
+    animation: blinker 1.5s linear infinite;
+    margin-bottom: 20px;
+}
+
+.drawer-btn {
+    display: inline-block;
+    background: var(--white);
+    color: var(--primary-green);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.drawer-btn:hover {
+    background: var(--harvest-yellow);
+    color: var(--white);
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-mission .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-mission h2::after {
+        margin: 10px auto 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .promo-drawer {
+        width: 250px;
+        padding: 20px;
+    }
+    
+    .team-grid, .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}

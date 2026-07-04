@@ -1,0 +1,190 @@
+.about-hero {
+    background: linear-gradient(rgba(5, 154, 50, 0.8), rgba(74, 50, 40, 0.8)), url('https://picsum.photos/seed/paddyfield/1920/600');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 100px;
+    color: var(--white);
+    text-align: center;
+}
+
+.about-hero h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-hero p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- MISSION & VISION SECTION --- */
+.mission-vision-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.mv-card {
+    background: var(--cream);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+}
+
+.mv-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.mv-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mv-card:hover .mv-image img {
+    transform: scale(1.05);
+}
+
+.mv-content {
+    padding: 30px;
+}
+
+.mv-content h2 {
+    color: var(--primary-green);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--harvest-yellow);
+    padding-left: 15px;
+}
+
+.mv-content p {
+    color: var(--text-grey);
+    line-height: 1.8;
+}
+
+/* --- WHAT WE OFFER SECTION --- */
+.offers-section {
+    padding: 80px 0;
+    background-color: var(--cream);
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Force 3 columns for larger screens to balance the 5 items */
+@media (min-width: 900px) {
+    .offers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Center the last row if there are only 2 items left */
+    .offers-grid .offer-card:last-child:nth-child(odd) {
+        grid-column: 2 / 3; 
+    }
+}
+
+.offer-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 4px solid var(--primary-green);
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-bottom-color: var(--harvest-yellow);
+}
+
+.offer-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.offer-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.offer-card:hover .offer-img img {
+    transform: scale(1.1);
+}
+
+.offer-text {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.offer-text h3 {
+    color: var(--earth-brown);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.offer-text p {
+    font-size: 0.9rem;
+    color: var(--text-grey);
+    margin-bottom: 0;
+}
+
+/* --- OUR COMMITMENT SECTION --- */
+.commitment-section {
+    padding: 100px 0;
+    background-color: var(--primary-green); /* Using Brand Green */
+    color: var(--white);
+    text-align: center;
+}
+
+.commitment-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.commitment-box h2 {
+    color: var(--harvest-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.commitment-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.commitment-icon {
+    font-size: 3rem;
+    color: rgba(255,255,255,0.2);
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero h1 { font-size: 2.5rem; }
+    .mission-vision-section .grid-2 { grid-template-columns: 1fr; }
+    .offers-grid { grid-template-columns: 1fr; }
+    .offers-grid .offer-card:last-child:nth-child(odd) { grid-column: auto; } /* Reset centering on mobile */
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhaanyaguah | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles for Success/Error Messages -->
+    <style>
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-message.success {
+            display: flex;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-message.error {
+            display: flex;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .form-message.submitting {
+            display: flex;
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="./logo-Dhaanyagunah.png" alt="Logo"> 
+                Dhaanyaguah
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="./team.html">Our Team</a></li>
+                <li><a href="contact.html" style="color: var(--earth-brown); font-weight:700;">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p style="max-width: 600px; margin: 0 auto;">We are here to answer your questions about drying and storage.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM & INFO -->
+    <section>
+        <div class="container grid-2">
+            <!-- Contact Form -->
+            <div class="card">
+                <h3>Send a Message</h3>
+                
+                <!-- Message Display Area -->
+                <div id="formMessage" class="form-message">
+                    <i id="formMsgIcon"></i>
+                    <span id="formMsgText"></span>
+                </div>
+
+                <form id="contactForm">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display:block; margin-bottom:5px; font-weight:600;">Your Name</label>
+                        <input type="text" id="userName" placeholder="Enter your name" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display:block; margin-bottom:5px; font-weight:600;">Phone Number</label>
+                        <input type="tel" id="userPhone" placeholder="Enter your phone number" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display:block; margin-bottom:5px; font-weight:600;">Message</label>
+                        <textarea id="userMessage" rows="4" placeholder="How can we help you?" required style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; box-sizing:border-box;"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn" style="width:100%; border:none; cursor:pointer;">Submit</button>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div>
+                <h2>Contact Information</h2>
+                <p>Feel free to visit our facility or call us directly during business hours.</p>
+                
+                <div style="margin-top: 30px;">
+                    <div style="margin-bottom: 20px; display:flex; align-items:center; gap:15px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--harvest-yellow); font-size: 1.5rem;"></i>
+                        <div>
+                            <h4 style="margin:0;">Address</h4>
+                            <p style="margin:0; font-size:0.9rem;">8-449, Main Road, Opposite Srinivasa Theatre, Mancherial, Dist: Mancherial, 504208 - TS.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px; display:flex; align-items:center; gap:15px;">
+                        <i class="fas fa-phone" style="color: var(--harvest-yellow); font-size: 1.5rem;"></i>
+                        <div>
+                            <h4 style="margin:0;">Phone</h4>
+                            <p style="margin:0; font-size:0.9rem;">8328222498</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px; display:flex; align-items:center; gap:15px;">
+                        <i class="fas fa-envelope" style="color: var(--harvest-yellow); font-size: 1.5rem;"></i>
+                        <div>
+                            <h4 style="margin:0;">Email</h4>
+                            <p style="margin:0; font-size:0.9rem;">info@dhaanyaguah.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <!-- <div style="width:100%; height: 200px; background: #ddd; border-radius: 8px; display:flex; justify-content:center; align-items:center; margin-top:20px;">
+                    <span style="color: #666;"><i class="fas fa-map"></i> Google Map Placeholder</span>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Dhaanyaguah</h3>
+                <p>Empowering farmers with technology to reduce post-harvest losses.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="./team.html">Our Team</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> 8-449, Main Road, Opposite Srinivasa Theatre, Mancherial, Dist: Mancherial, 504208 - TS.</li>
+                    <li><i class="fas fa-phone"></i> 8328222498</li>
+                    <li><i class="fas fa-envelope"></i> info@dhaanyaguah.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/dhaanyagunah/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/dhaanyagunah/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/dhaanyagunah" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/dhaanyagunah" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/dhaanyagunah" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Dhaanyaguah. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT FOR GOOGLE SHEET CONNECTION     -->
+    <!-- ========================================== -->
+    <script>
+        // ⬇️⬇️⬇️ LINE 172: PASTE YOUR GOOGLE SCRIPT URL BELOW ⬇️⬇️⬇️
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxu9xDVDag2vA6hvnT416kROcMZkposam8tIueWaRORcp1BTSDXoVlWTGWuyMFGUJ5z/exec";
+        // ⬆️⬆️⬆️ REPLACE ONLY THE TEXT INSIDE THE QUOTES ⬆️⬆️⬆️
+
+        const form = document.getElementById("contactForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const msgBox = document.getElementById("formMessage");
+        const msgIcon = document.getElementById("formMsgIcon");
+        const msgText = document.getElementById("formMsgText");
+
+        function showMessage(type, text) {
+            msgBox.className = "form-message " + type;
+            if (type === "success") {
+                msgIcon.className = "fas fa-check-circle";
+            } else if (type === "error") {
+                msgIcon.className = "fas fa-exclamation-circle";
+            } else {
+                msgIcon.className = "fas fa-spinner fa-spin";
+            }
+            msgText.textContent = text;
+        }
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("userName").value.trim();
+            const phone = document.getElementById("userPhone").value.trim();
+            const message = document.getElementById("userMessage").value.trim();
+
+            if (!name || !phone || !message) {
+                showMessage("error", "Please fill in all fields.");
+                return;
+            }
+
+            showMessage("submitting", "Sending your message...");
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: name, phone: phone, message: message })
+            })
+            .then(function() {
+                showMessage("success", "Thank you! Your message has been saved. We will contact you soon.");
+                form.reset();
+            })
+            .catch(function() {
+                showMessage("error", "Something went wrong. Please try again or call us at 8328222498.");
+            })
+            .finally(function() {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Submit";
+            });
+        });
+    </script>
+
+</body>
+</html>

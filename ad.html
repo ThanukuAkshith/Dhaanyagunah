@@ -1,0 +1,71 @@
+<!-- ANNAPOORNA ADVERTISEMENT MODAL -->
+<div id="promoModal" class="promo-modal">
+    <div class="promo-overlay" onclick="closePromo()"></div> <!-- Click background to close -->
+    
+    <div class="promo-card">
+        <!-- Close Button -->
+        <button class="promo-close" onclick="closePromo()">&times;</button>
+        
+        <div class="promo-grid">
+            <!-- Left: Image -->
+            <div class="promo-image-side">
+                <img src="https://picsum.photos/seed/annapoorna/800/800" alt="Annapoorna Dryer">
+                <div class="promo-badge">
+                    <i class="fas fa-star"></i> Coming Soon
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="promo-content-side">
+                <span class="promo-tag">New Innovation</span>
+                <h1>Introducing <span>Annapoorna</span></h1>
+                <p>The future of grain drying is here. Fully automated, energy-efficient, and designed for the modern farmer.</p>
+                
+                <ul class="promo-list">
+                    <li><i class="fas fa-check-circle"></i> 50% Faster Processing</li>
+                    <li><i class="fas fa-check-circle"></i> IoT Enabled Monitoring</li>
+                    <li><i class="fas fa-check-circle"></i> Zero Moisture Loss</li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="promo-actions">
+                    <form class="promo-form" onsubmit="handlePromoNotify(event)">
+                        <input type="email" placeholder="Your Email for Early Access" required>
+                        <button type="submit" class="btn">Notify Me</button>
+                    </form>
+                    <button class="btn btn-outline" onclick="closePromo()">Explore Dhaanyagunah</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JAVASCRIPT TO HANDLE THE AD -->
+<script>
+    // Ensure modal shows immediately on load
+    window.addEventListener('load', () => {
+        // Optional: Add a small delay (e.g., 500ms) if you want the page to render first
+        const modal = document.getElementById('promoModal');
+        modal.style.opacity = '1';
+        modal.style.pointerEvents = 'all';
+    });
+
+    function closePromo() {
+        const modal = document.getElementById('promoModal');
+        modal.style.opacity = '0';
+        modal.style.pointerEvents = 'none';
+    }
+
+    function handlePromoNotify(e) {
+        e.preventDefault();
+        // Re-use your existing toast notification
+        const toast = document.getElementById('toast');
+        if(toast) {
+            const toastText = toast.querySelector('span');
+            toastText.textContent = "You've joined the Annapoorna waitlist!";
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+        closePromo();
+    }
+</script>
